@@ -8,7 +8,7 @@ const Card = ({ data }) => {
                 if (!news.urlToImage) return null;
 
                 return (
-                    <div key={`${news.url}-${index}`} className='bg-gray-700 p-4 rounded-md w-full max-w-xs mx-auto sm:mx-0'>
+                    <div key={index} className='bg-gray-700 p-4 rounded-md w-full max-w-xs mx-auto sm:mx-0'>
                         <img 
                             src={news.urlToImage} 
                             alt={news.title} 
