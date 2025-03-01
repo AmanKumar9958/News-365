@@ -1,10 +1,11 @@
 import React from 'react'
 import './index.css'
+import NewsApp from './components/NewsApp'
 
 const App = () => {
   return (
     <div>
-      <h1 className='text-center'>Newsly - Get latest news anywhere and anytime..</h1>
+      <NewsApp />
     </div>
   )
 }
