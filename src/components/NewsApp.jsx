@@ -4,7 +4,7 @@ import './Spinner.css'
 import Card from './Card'
 
 const NewsApp = () => {
-    const API_Key = process.env.REACT_APP_NEWS_API_KEY;
+    const API_Key = import.meta.env.VITE_NEWS_API_KEY;
     const [search, setSearch] = useState("India");
     const [news, setNews] = useState([]);
     const [loading, setLoading] = useState(false);
