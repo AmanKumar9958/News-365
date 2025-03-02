@@ -9,6 +9,11 @@ const NewsApp = () => {
     const [news, setNews] = useState([]);
     const [loading, setLoading] = useState(false);
     const [totalResults, setTotalResults] = useState(0);
+    const [darkMode, setDarkMode] = useState(false);
+    const toggleMode = () => {
+        setDarkMode(!darkMode);
+        document.documentElement.classList.toggle('dark');
+    }
 
     const getData = async (query) => {
         setLoading(true);
@@ -51,21 +56,26 @@ const NewsApp = () => {
     
 
     return (
-        <div className='min-h-screen w-full bg-gray-800 text-white'>
+        <div className='min-h-screen w-full bg-white text-gray-800 dark:bg-gray-800 dark:text-white transition duration-500'>
             <nav className='flex flex-col md:flex-row justify-between items-center p-4 border-b-2 border-gray-600'>
-                <h1 className='text-2xl md:text-4xl font-bold cursor-pointer'>Newsly</h1>
+                <h1 className='text-2xl md:text-4xl font-bold cursor-pointer'>News-365</h1>
 
                 <div className='flex gap-2'>
                     <input 
                         type="text" 
                         placeholder='Search News..' 
                         value={search} 
-                        className='bg-gray-600 rounded-md p-2 w-64 transition hover:outline-1 hover:outline-blue-600' 
+                        className='bg-white border-1 border-black dark:text-white dark:bg-gray-900 dark:border-white rounded-md p-2 w-64 transition hover:outline-1 hover:outline-blue-600' 
                         onChange={handleInput}
                         onKeyDown={handleKeyDown}
                     />
-                    <button className='bg-blue-600 p-2 rounded-md px-4' onClick={handleSearch}>
+                    <button className='bg-blue-600 p-2 rounded-md px-4 font-bold text-white' onClick={handleSearch}>
                         Search
+                    </button>
+                </div>
+                <div>
+                    <button className='bg-blue-600 p-1 rounded-md font-bold text-white text-2xl' onClick={toggleMode}>
+                        {darkMode ? '🔆' : '🌙'}
                     </button>
                 </div>
             </nav>

@@ -8,7 +8,7 @@ const Card = ({ data }) => {
                 const formattedDate = new Date(news.publishedAt).toLocaleDateString('en-GB');
 
                 return (
-                    <div key={index} className='bg-gray-700 p-4 rounded-md w-full max-w-xs mx-auto sm:mx-0'>
+                    <div key={index} className='bg-white text-gray-800 dark:bg-gray-800 dark:text-white border-1 border-gray dark:border-white p-4 rounded-md w-full max-w-xs mx-auto sm:mx-0'>
                         <img 
                             src={news.image} 
                             alt={news.title} 
@@ -17,8 +17,8 @@ const Card = ({ data }) => {
                         />
                         <div className='space-y-2'>
                             <h2 className='text-lg font-bold line-clamp-2'>{news.title}</h2>
-                            <p className='text-gray-300 text-sm line-clamp-3'>{news.description}</p>
-                            <div className='text-xs text-gray-400'>
+                            <p className='text-gray-600 text-sm line-clamp-3 dark:text-gray-200'>{news.description}</p>
+                            <div className='text-xs text-gray-500 dark:text-gray-400'>
                                 {news.source?.name && <p>Source: {news.source.name}</p>}
                                 <p>Published: {formattedDate}</p>
                             </div>

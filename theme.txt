@@ -1,0 +1,7 @@
+dark theme:
+    text: white
+    bg: gray-800
+
+light theme:
+    text: gray-800
+    bg: white

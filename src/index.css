@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 /* Optional: Add this for text truncation */
 .truncate-multiline {
@@ -6,4 +7,11 @@
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
+}
+button{
+    cursor: pointer;
+    transition: all 0.3s;
+}
+button:hover{
+    scale: 1.1;
 }
