@@ -8,7 +8,7 @@ const Card = ({ data }) => {
                 const formattedDate = new Date(news.publishedAt).toLocaleDateString('en-GB');
 
                 return (
-                    <div key={index} className='bg-white text-gray-800 dark:bg-gray-800 dark:text-white border-1 border-gray dark:border-white p-4 rounded-md w-full max-w-xs mx-auto sm:mx-0'>
+                    <div key={index} className='bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-white p-4 rounded-md w-full max-w-xs mx-auto sm:mx-0'>
                         <img 
                             src={news.image} 
                             alt={news.title} 
