@@ -56,5 +56,5 @@ Contributions are welcome! Feel free to fork the repository and submit a pull re
 ## 📩 Contact
 For any queries or suggestions, feel free to reach out.
 
-📧 **Email:** your.email@example.com  
-🐙 **GitHub:** [yourusername](https://github.com/yourusername)
+📧 **Email:** amancollege04@gmail.com  
+🐙 **GitHub:** [AmanKumar9958](https://github.com/AmanKumar9958)
