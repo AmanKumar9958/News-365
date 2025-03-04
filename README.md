@@ -1,12 +1,64 @@
-# React + Vite
+# 📰 News 365
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🚀 **News 365** is a modern news application built using **React** and **Tailwind CSS**. It provides the latest news with powerful search functionality and category-wise filtering. The app also features a dark/light mode and is fully responsive across all devices.
 
-Currently, two official plugins are available:
+🔗 **Live Demo:** [News 365](https://news-365.netlify.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📌 Features
 
-## Expanding the ESLint configuration
+- 🔍 **Search Functionality** – Easily search for news articles.
+- 📂 **Category-Wise Search** – Browse news by specific categories.
+- 🌗 **Dark/Light Theme Toggle** – Switch between dark and light mode.
+- 📱 **Fully Responsive** – Optimized for all screen sizes.
+- 🌍 **Real-Time News Updates** – Fetches the latest news from the [GNews API](https://gnews.io/).
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Technologies Used
+
+- **React.js** – Frontend framework
+- **Tailwind CSS** – Styling and layout
+- **GNews API** – Fetching news data
+
+## 🚀 Getting Started
+
+Follow these steps to run the project locally:
+
+### 1️⃣ Clone the Repository
+```sh
+git clone https://github.com/yourusername/news-365.git
+cd news-365
+```
+
+### 2️⃣ Install Dependencies
+```sh
+npm install
+```
+
+### 3️⃣ Get API Key
+- Visit [GNews API](https://gnews.io/).
+- Sign up and get an API key.
+- Create a `.env` file in the root directory and add:
+```sh
+REACT_APP_GNEWS_API_KEY=your_api_key_here
+```
+
+### 4️⃣ Start the Development Server
+```sh
+npm start
+```
+The app will run on `http://localhost:3000/`.
+
+## 📸 Screenshots
+
+![News 365 Screenshot](https://via.placeholder.com/800x400?text=News+365+App+Screenshot)
+
+## 📜 License
+This project is open-source and available under the **MIT License**.
+
+## 🤝 Contributing
+Contributions are welcome! Feel free to fork the repository and submit a pull request.
+
+## 📩 Contact
+For any queries or suggestions, feel free to reach out.
+
+📧 **Email:** your.email@example.com  
+🐙 **GitHub:** [yourusername](https://github.com/yourusername)
