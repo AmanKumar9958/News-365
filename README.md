@@ -1,4 +1,4 @@
-# 📰 News 365
+# 📢 News 365
 
 🚀 **News 365** is a modern news application built using **React** and **Tailwind CSS**. It provides the latest news with powerful search functionality and category-wise filtering. The app also features a dark/light mode and is fully responsive across all devices.
 
@@ -46,10 +46,6 @@ REACT_APP_GNEWS_API_KEY=your_api_key_here
 npm start
 ```
 The app will run on `http://localhost:3000/`.
-
-## 📸 Screenshots
-
-![News 365 Screenshot](https://via.placeholder.com/800x400?text=News+365+App+Screenshot)
 
 ## 📜 License
 This project is open-source and available under the **MIT License**.
