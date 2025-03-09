@@ -53,6 +53,10 @@ const NewsApp = () => {
     const handleKeyDown = (e) => {
         if (e.key === 'Enter') handleSearch();
     };
+    const handleLogo = (e) => {
+        setSearch('India');
+        getData('India');
+    }
 
     return (
         <div className='min-h-screen w-full bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300'>
@@ -61,6 +65,7 @@ const NewsApp = () => {
                     initial={{ x: -50, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     className='text-3xl font-bold cursor-pointer mb-4 md:mb-0'
+                    onClick={handleLogo}
                 >
                     News-365 📢
                 </motion.h1>
