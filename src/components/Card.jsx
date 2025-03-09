@@ -1,39 +1,71 @@
+// Card.jsx
 import React from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Card = ({ data }) => {
-    return (
-        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 p-4'>
-            {data.map((news, index) => {
-                if (!news.image) return null;
-                const formattedDate = new Date(news.publishedAt).toLocaleDateString('en-GB');
+    const cardVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0 }
+    };
 
-                return (
-                    <div key={index} className='bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-white p-4 rounded-md w-full max-w-xs mx-auto sm:mx-0'>
-                        <img 
-                            src={news.image} 
-                            alt={news.title} 
-                            className='w-full h-48 md:h-40 object-cover rounded-md mb-4'
-                            onError={(e) => { e.target.src = 'https://via.placeholder.com/300x150?text=Image+Not+Found'; }}
-                        />
-                        <div className='space-y-2'>
-                            <h2 className='text-lg font-bold line-clamp-2'>{news.title}</h2>
-                            <p className='text-gray-600 text-sm line-clamp-3 dark:text-gray-200'>{news.description}</p>
-                            <div className='text-xs text-gray-500 dark:text-gray-400'>
-                                {news.source?.name && <p>Source: {news.source.name}</p>}
-                                <p>Published: {formattedDate}</p>
+    return (
+        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 p-4'>
+            <AnimatePresence>
+                {data.map((news, index) => {
+                    if (!news.image) return null;
+                    const formattedDate = new Date(news.publishedAt).toLocaleDateString('en-GB');
+
+                    return (
+                        <motion.div 
+                            key={index}
+                            variants={cardVariants}
+                            initial="hidden"
+                            animate="visible"
+                            exit="hidden"
+                            transition={{ delay: index * 0.1 }}
+                            className='group relative overflow-hidden bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300'
+                        >
+                            <div className='relative h-48 overflow-hidden'>
+                                <img 
+                                    src={news.image} 
+                                    alt={news.title} 
+                                    className='w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300'
+                                />
+                                <div className='absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent' />
                             </div>
-                            <a 
-                                href={news.url} 
-                                target='_blank' 
-                                rel='noreferrer' 
-                                className='inline-block text-blue-500 hover:text-blue-400 text-sm font-medium mt-2'
-                            >
-                                Read more →
-                            </a>
-                        </div>
-                    </div>
-                );
-            })}
+                            
+                            <div className='p-5 space-y-3'>
+                                <h2 className='text-lg font-bold text-gray-800 dark:text-white line-clamp-2'>
+                                    {news.title}
+                                </h2>
+                                <p className='text-gray-600 dark:text-gray-300 text-sm line-clamp-3'>
+                                    {news.description}
+                                </p>
+                                
+                                <div className='flex justify-between items-center text-xs text-gray-500 dark:text-gray-400'>
+                                    <span className='bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-300 px-2 py-1 rounded'>
+                                        {news.source?.name || 'Unknown Source'}
+                                    </span>
+                                    <span>{formattedDate}</span>
+                                </div>
+                                
+                                <a 
+                                    href={news.url} 
+                                    target='_blank' 
+                                    rel='noreferrer' 
+                                    className='inline-flex items-center text-cyan-600 dark:text-cyan-400 hover:text-cyan-500 font-medium mt-2 group'
+                                >
+                                    Read More
+                                    <svg className='w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform' 
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </motion.div>
+                    );
+                })}
+            </AnimatePresence>
         </div>
     );
 };
